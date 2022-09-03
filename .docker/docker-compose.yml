@@ -1,0 +1,45 @@
+version: "3.1"
+
+services:
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+  db:
+    image: mysql:5.7
+    container_name: laravel-challenge-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - laravel-challenge-dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=gWJR2HynAy
+      - MYSQL_DATABASE=challenge
+      - MYSQL_USER=challenge
+      - MYSQL_PASSWORD=abc123465*
+    ports:
+      - "3310:3306"
+
+  webserver:
+    image: nginx:alpine
+    container_name: laravel-challenge-webserver
+    working_dir: /application
+    volumes:
+        - ../.:/application
+        - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8005:80"
+    links:
+      - db
+
+  php-fpm:
+    build: php-fpm
+    container_name: laravel-challenge-php-fpm
+    working_dir: /application
+    volumes:
+      - ../.:/application
+      - ./php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+    links:
+      - db
+volumes:
+  laravel-challenge-dbdata:
+    driver: local
