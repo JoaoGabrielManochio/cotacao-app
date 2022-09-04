@@ -32,8 +32,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item{{ Request::is(['contatos/*', 'contatos']) ? ' active' : '' }}">
-                            <a class="nav-link" href="{{ route('contatos.index') }}">Contatos</a>
+                        <li class="nav-item{{ Request::is(['cotacoes/*', 'cotacoes']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('cotacoes.index') }}">Cotações</a>
                         </li>
                         <li class="nav-item{{ Request::is(['users/*', 'users']) ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('users.index') }}">Usuários</a>
