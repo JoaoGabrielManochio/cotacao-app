@@ -68,9 +68,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 Ao clonar o projeto, será necessário seguir os seguintes passos
 
  - renomear o arquivo ".env.example" para ".env"
- - rodar o comando make up (esse comando irá executar uma rotina de comandos, onde irá subir o container do docker e fazer a instalação das dependências do projeto)
  - rodar o comando cd .docker/
+ - rodar o comando docker-compose up -d
+ - rodar o comando docker-compose exec php-fpm apt-get remove --purge php8.1* (comando para remover versão 8.1 do PHP) e apertar Y para confirmar
+ - rodar o comando docker-compose exec php-fpm apt-get composer install (instalar as dependência do projeto)
+ - rodar o comando docker-compose exec php-fpm php artisan key:generate
  - rodar o comando docker-compose exec php-fpm php artisan migrate (criação da tabela no banco de dados)
+ - rodar o comando npm install (instalar o node_modules)
 
 Para acessar o ambiente -> http://localhost:8005/
 Para acessar o banco -> http://localhost:8080/
