@@ -63,8 +63,14 @@ class CotacaoController extends Controller
      */
     public function store(StoreCotacaoRequest $request)
     {
+        $input = [
+            'moeda_origem' => $request->moeda_origem,
+            'moeda_destino' => $request->moeda_destino,
+            'valor_conversao' => $request->valor_conversao,
+            'forma_pagamento' => $request->forma_pagamento
+        ];
 
-        $response = $this->cotacaoRepository->store($request);
+        $response = $this->cotacaoRepository->store($input);
 
         if (!$response['success']) {
             flash($response['message'], 'error');
