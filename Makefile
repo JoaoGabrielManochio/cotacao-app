@@ -14,7 +14,7 @@ seed:
 	cd .docker && docker-compose exec php-fpm php artisan db:seed
 
 test:
-	cd .docker && docker-compose exec php-fpm ./vendor/bin/phpunit
+	cd .docker && docker-compose exec php-fpm php artisan test
 
 config-clear:
 	cd .docker && docker-compose exec php-fpm php artisan config:clear
