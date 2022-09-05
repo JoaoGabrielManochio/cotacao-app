@@ -38,6 +38,9 @@
                         <li class="nav-item{{ Request::is(['users/*', 'users']) ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('users.index') }}">Usuários</a>
                         </li>
+                        <li class="nav-item{{ Request::is(['config/*', 'config']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('config.index') }}">Configurações</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -20,7 +20,7 @@
 <div class="form-group row">
     <label for="valor_conversao" class="col-md-4 col-form-label text-md-right">Valor para conversão</label>
     <div class="col-md-6">
-        <input id="valor_conversao" type="text" class="form-control" name="valor_conversao" value="{{ old('valor_conversao') }}" required autocomplete="valor_conversao" autofocus>
+        <input id="valor_conversao" type="number" step="0.01" class="form-control" name="valor_conversao" value="{{ old('valor_conversao') }}" required autocomplete="valor_conversao" autofocus>
     </div>
 </div>
 

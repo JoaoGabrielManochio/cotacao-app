@@ -24,4 +24,5 @@ Route::get('/home', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UserController')->except(['show']);
     Route::resource('cotacoes', 'CotacaoController')->except(['show']);
+    Route::resource('config', 'ConfigController')->except(['show']);
 });
