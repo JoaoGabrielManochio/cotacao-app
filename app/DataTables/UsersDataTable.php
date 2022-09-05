@@ -46,14 +46,19 @@ class UsersDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-                    ->setTableId('users-table')
-                    ->columns($this->getColumns())
-                    ->parameters(['autoWidth' => false])
-                    ->addAction(['title' => 'Ações', 'class' => 'text-center'])
-                    ->minifiedAjax()
-                    ->dom('frtip')
-                    ->orderBy(1)
-                    ->language('//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json');
+            ->setTableId('users-table')
+            ->columns($this->getColumns())
+            ->parameters(
+                [
+                    'autoWidth' => false,
+                    'responsive' => true
+                ]
+            )
+            ->addAction(['title' => 'Ações', 'class' => 'text-center'])
+            ->minifiedAjax()
+            ->dom('frtip')
+            ->orderBy(1)
+            ->language('//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json');
     }
 
     /**

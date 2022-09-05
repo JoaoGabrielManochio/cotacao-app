@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+#cotacaos-table_paginate {
+    margin-left: auto !important;
+}
+#users-table_paginate {
+  margin-left: auto !important;
+}
 table.dataTable {
   clear: both;
   margin-top: 6px !important;

@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <span>Configurar Taxas</span>
-                    <a href="{{ route('config.index') }}" class="btn btn-sm btn-outline-dark">Voltar</a>
+                    <a href="{{ route('cotacoes.index') }}" class="btn btn-sm btn-outline-dark">Voltar</a>
                 </div>
                 <div class="card-body">
                     @if (session('status'))

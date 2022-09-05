@@ -124,7 +124,12 @@ class CotacaoDataTable extends DataTable
         return $this->builder()
             ->setTableId('cotacaos-table')
             ->columns($this->getColumns())
-            ->parameters(['autoWidth' => true])
+            ->parameters(
+                [
+                    'autoWidth' => true,
+                    'responsive' => true
+                ]
+            )
             ->minifiedAjax()
             ->dom('frtip')
             ->orderBy(1)
